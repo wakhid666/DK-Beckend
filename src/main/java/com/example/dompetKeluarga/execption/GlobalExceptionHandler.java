@@ -3,6 +3,7 @@ package com.example.dompetKeluarga.execption;
 import com.example.dompetKeluarga.dto.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -16,6 +17,12 @@ public class GlobalExceptionHandler {
                 null
         );
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(AuthenticationException.class)
+    public ResponseEntity<ApiResponse<Object>> handleAuthenticationException(AuthenticationException ex) {
+        ApiResponse<Object> response = new ApiResponse<>("error", "Authentication required or token expired", null);
+        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
     }
 
     public static <T> ResponseEntity<ApiResponse<T>> handleError(String message) {
