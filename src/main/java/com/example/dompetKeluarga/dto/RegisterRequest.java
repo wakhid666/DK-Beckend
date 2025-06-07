@@ -11,5 +11,11 @@ import lombok.*;
 public class RegisterRequest {
     private String username;
     private String password;
+    private String role;
+    private String fullName;
+    private String gender;
 
+    public String getIsAdmin() {
+        return role;
+    }
 }
