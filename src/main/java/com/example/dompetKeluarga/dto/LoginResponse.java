@@ -1,13 +1,10 @@
 package com.example.dompetKeluarga.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @Builder
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor
 public class LoginResponse {
     private String token;

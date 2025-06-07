@@ -1,18 +1,15 @@
 package com.example.dompetKeluarga.dto;
 
 import com.example.dompetKeluarga.model.Role;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 
 @Data
 @Builder
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor
 public class UserDto {
     private Long id;
-    private String email;
-    private String password;
+    private String username;
     private Role role;
 }

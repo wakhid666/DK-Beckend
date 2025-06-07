@@ -1,15 +1,16 @@
 package com.example.dompetKeluarga.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+@Setter
+@Getter
 @Data
 @Builder
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor
 public class LoginRequest {
-    private String email;
+    private String username;
     private String password;
+
+
 }
